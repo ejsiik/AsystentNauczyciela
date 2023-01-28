@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.view.adapters.MarksAdapter
 import com.example.asystentnauczyciela.view.adapters.RecyclerViewInterface
+
+
 import com.example.asystentnauczyciela.viewmodel.marks.StudentsMarksViewModel
 import kotlinx.android.synthetic.main.fragment_students_marks.view.*
 
@@ -51,9 +53,5 @@ class StudentsMarksFragment : Fragment(), RecyclerViewInterface {
     }
 
     override fun onItemCLick(id: Int) {
-    }
-
-    override fun onDeleteCLick(id: Int) {
-        viewModel.deleteMarkById(id)
     }
 }

@@ -4,14 +4,10 @@ import androidx.lifecycle.LiveData
 import com.example.asystentnauczyciela.model.entities.Subject
 import com.example.asystentnauczyciela.model.entities.SubjectDao
 
-class SubjectRepository(private val subjectDao: SubjectDao) {
-    val getAllSubjects: LiveData<List<Subject>> = subjectDao.getAllSubjects()
+class SubjectRepository(private val zajeciaDao: SubjectDao) {
+    val getAllSubjects: LiveData<List<Subject>> = zajeciaDao.getAllSubjects()
 
     fun addSubject(subject: Subject) {
-        subjectDao.addSubject(subject)
-    }
-
-    fun deleteSubjectById(subjectId: Int) {
-        subjectDao.deleteById(subjectId.toString())
+        zajeciaDao.addSubject(subject)
     }
 }

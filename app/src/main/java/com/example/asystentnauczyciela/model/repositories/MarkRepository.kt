@@ -12,8 +12,4 @@ class MarkRepository(private val markDao: MarkDao) {
     fun getSubjectStudentMarks(subjectId: Int, studentId: Number): LiveData<List<Mark>> {
         return markDao.getSubjectStudentMarks(subjectId.toString(), studentId.toString())
     }
-
-    fun deleteMarkById(markId: Int) {
-        markDao.deleteById(markId.toString())
-    }
 }

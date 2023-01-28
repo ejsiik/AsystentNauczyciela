@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.asystentnauczyciela.model.database.TeacherAssistantDatabase
+import com.example.asystentnauczyciela.model.database.AsystentNauczycielaDatabase
 import com.example.asystentnauczyciela.model.entities.Mark
 import com.example.asystentnauczyciela.model.repositories.MarkRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ class StudentsMarksViewModel(application: Application) : AndroidViewModel(applic
     private val markRepository: MarkRepository
 
     init {
-        val database = TeacherAssistantDatabase.getDatabase(application)
+        val database = AsystentNauczycielaDatabase.getDatabase(application)
         markRepository = MarkRepository(database.markDao())
     }
 
@@ -25,12 +25,6 @@ class StudentsMarksViewModel(application: Application) : AndroidViewModel(applic
     fun addMark(mark: Mark) {
         viewModelScope.launch(Dispatchers.IO) {
             markRepository.addMark(mark)
-        }
-    }
-
-    fun deleteMarkById(markId: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            markRepository.deleteMarkById(markId)
         }
     }
 }

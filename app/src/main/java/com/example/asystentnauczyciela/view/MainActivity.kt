@@ -11,7 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.asystentnauczyciela.R
-import com.example.asystentnauczyciela.model.database.TeacherAssistantDatabase
+import com.example.asystentnauczyciela.model.database.AsystentNauczycielaDatabase
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,13 +38,13 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
         if (id == R.id.clear_all_data_menu_option) {
             lifecycleScope.launch(Dispatchers.IO) {
-                TeacherAssistantDatabase.getDatabase(application).clearAllTables()
+                AsystentNauczycielaDatabase.getDatabase(application).clearAllTables()
             }
             
             Toast.makeText(
                 applicationContext,
                 "Wyczyszczono wszystkie dane!",
-                Toast.LENGTH_LONG
+                Toast.LENGTH_SHORT
             ).show()
             findNavController(R.id.fragmentContainerView).navigate(R.id.subjectsListFragment)
 

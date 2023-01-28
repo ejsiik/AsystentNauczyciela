@@ -50,8 +50,4 @@ class StudentsList : Fragment(), RecyclerViewInterface {
 
     override fun onItemCLick(id: Int) {
     }
-
-    override fun onDeleteCLick(id: Int) {
-        viewModel.deleteStudentById(id)
-    }
 }

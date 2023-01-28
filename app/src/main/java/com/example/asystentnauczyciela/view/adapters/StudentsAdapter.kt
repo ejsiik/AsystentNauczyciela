@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.model.entities.Student
-import kotlinx.android.synthetic.main.student_row.view.*
+import kotlinx.android.synthetic.main.student_item.view.*
 
 class StudentsAdapter(
     private val recyclerViewInterface: RecyclerViewInterface?
@@ -20,7 +20,7 @@ class StudentsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsListHolder {
         return StudentsListHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.student_row, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.student_item, parent, false)
         )
     }
 
@@ -29,10 +29,6 @@ class StudentsAdapter(
         holder.itemView.student_name.text = currentItem.name
         holder.itemView.student_surname.text = currentItem.surname
         holder.itemView.student_album_number.text = currentItem.albumNumber
-
-        holder.itemView.delete_student_button.setOnClickListener {
-            recyclerViewInterface?.onDeleteCLick(currentItem.id)
-        }
     }
 
     override fun getItemCount(): Int {

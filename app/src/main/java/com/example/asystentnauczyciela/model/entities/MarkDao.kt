@@ -16,7 +16,4 @@ interface MarkDao {
                 "AND SubjectId = :subjectId"
     )
     fun getSubjectStudentMarks(subjectId: String, studentId: String): LiveData<List<Mark>>
-
-    @Query("DELETE FROM marks WHERE id = :markId")
-    fun deleteById(markId: String)
 }

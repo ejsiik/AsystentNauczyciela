@@ -13,7 +13,4 @@ interface SubjectDao {
 
     @Query("SELECT * FROM subjects Order by dayId, timeFrom")
     fun getAllSubjects(): LiveData<List<Subject>>
-
-    @Query("DELETE FROM subjects WHERE id = :subjectId")
-    fun deleteById(subjectId: String)
 }

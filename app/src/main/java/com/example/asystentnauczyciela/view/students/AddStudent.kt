@@ -40,6 +40,7 @@ class AddStudent : Fragment() {
             if (checkInput(name, surname, albumNumber)) {
                 val student = Student(0, name, surname, albumNumber)
                 viewModel.addStudent(student)
+                Toast.makeText(requireContext(), "Dodano studenta!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.students)
             } else {
                 Toast.makeText(requireContext(), "Wpisz poprawne dane!", Toast.LENGTH_LONG)

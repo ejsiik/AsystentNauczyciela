@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.model.entities.Subject
 import com.example.asystentnauczyciela.view.subjects.SubjectsListFragmentDirections
-import kotlinx.android.synthetic.main.subject_row.view.*
+import kotlinx.android.synthetic.main.subject_item.view.*
 
 class SubjectAdapter(private val recyclerViewInterface: RecyclerViewInterface?) :
     RecyclerView.Adapter<SubjectAdapter.SubjectListHolder>() {
@@ -18,7 +18,7 @@ class SubjectAdapter(private val recyclerViewInterface: RecyclerViewInterface?) 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubjectListHolder {
         return SubjectListHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.subject_row, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.subject_item, parent, false)
         )
     }
 
@@ -33,10 +33,6 @@ class SubjectAdapter(private val recyclerViewInterface: RecyclerViewInterface?) 
                 currentItem.name
             )
             holder.itemView.findNavController().navigate(action)
-        }
-
-        holder.itemView.delete_subject_button.setOnClickListener {
-            recyclerViewInterface?.onDeleteCLick(currentItem.id)
         }
     }
 

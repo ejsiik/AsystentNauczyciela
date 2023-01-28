@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.asystentnauczyciela.R
-import com.example.asystentnauczyciela.model.entities.StudentSubjectCrossRef
+import com.example.asystentnauczyciela.model.entities.StudentZajecia
 import com.example.asystentnauczyciela.view.adapters.AssignStudentToSubjectAdapter
 import com.example.asystentnauczyciela.view.adapters.RecyclerViewInterface
 import com.example.asystentnauczyciela.viewmodel.students.AssignStudentToSubjectViewModel
@@ -48,10 +48,7 @@ class AssignStudentToSubjectFragment : Fragment(), RecyclerViewInterface {
     }
 
     override fun onItemCLick(id: Int) {
-        viewModel.addEnrollment(StudentSubjectCrossRef(id, args.subjectId))
+        viewModel.addEnrollment(StudentZajecia(id, args.subjectId))
         findNavController().navigateUp()
-    }
-
-    override fun onDeleteCLick(id: Int) {
     }
 }

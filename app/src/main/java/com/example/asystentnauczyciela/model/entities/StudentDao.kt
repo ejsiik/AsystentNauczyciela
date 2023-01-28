@@ -27,7 +27,4 @@ interface StudentDao {
                 "WHERE ssc.subjectId = :subjectId"
     )
     fun getEnrolledStudents(subjectId: String): LiveData<List<Student>>
-
-    @Query("DELETE FROM students WHERE id = :studentId")
-    fun deleteById(studentId: String)
 }

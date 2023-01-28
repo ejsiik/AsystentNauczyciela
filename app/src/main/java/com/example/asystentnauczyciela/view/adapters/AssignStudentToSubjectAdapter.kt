@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.model.entities.Student
-import kotlinx.android.synthetic.main.student_row.view.*
+import kotlinx.android.synthetic.main.student_item.view.*
 
 class AssignStudentToSubjectAdapter(
     private val recyclerViewInterface: RecyclerViewInterface?,
@@ -20,7 +20,7 @@ class AssignStudentToSubjectAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsListHolder {
         return StudentsListHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.student_row, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.student_item, parent, false)
         )
     }
 
@@ -32,10 +32,6 @@ class AssignStudentToSubjectAdapter(
 
         holder.itemView.setOnClickListener {
             recyclerViewInterface?.onItemCLick(currentItem.id)
-        }
-
-        if (hideDeleteButton) {
-            holder.itemView.delete_student_button.visibility = View.INVISIBLE
         }
     }
 

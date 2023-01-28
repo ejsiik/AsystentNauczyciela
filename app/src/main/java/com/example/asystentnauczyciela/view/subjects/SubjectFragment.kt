@@ -72,7 +72,4 @@ class SubjectFragment : Fragment(), RecyclerViewInterface {
         findNavController().navigate(action)
     }
 
-    override fun onDeleteCLick(id: Int) {
-        viewModel.deleteStudentEnrollmentById(id, args.subjectId)
-    }
 }

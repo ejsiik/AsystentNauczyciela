@@ -1,14 +1,10 @@
 package com.example.asystentnauczyciela.model.repositories
 
-import com.example.asystentnauczyciela.model.entities.StudentSubjectCrossDao
-import com.example.asystentnauczyciela.model.entities.StudentSubjectCrossRef
+import com.example.asystentnauczyciela.model.entities.StudentZajeciaDao
+import com.example.asystentnauczyciela.model.entities.StudentZajecia
 
-class StudentSubjectCrossRepository(private val studentSubjectCrossDao: StudentSubjectCrossDao) {
-    fun addStuStudentSubjectCross(studentSubjectCrossRef: StudentSubjectCrossRef) {
-        studentSubjectCrossDao.addStudentSubjectCross(studentSubjectCrossRef)
-    }
-
-    fun deleteStudentSubjectCrossById(studentId: Number, subjectId: Number) {
-        return studentSubjectCrossDao.deleteById(studentId.toString(), subjectId.toString())
+class StudentSubjectCrossRepository(private val studentZajeciaDao: StudentZajeciaDao) {
+    fun addStuStudentSubjectCross(studentZajecia: StudentZajecia) {
+        studentZajeciaDao.addStudentSubjectCross(studentZajecia)
     }
 }

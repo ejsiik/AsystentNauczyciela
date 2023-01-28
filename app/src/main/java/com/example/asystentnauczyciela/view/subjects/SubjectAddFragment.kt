@@ -55,7 +55,7 @@ class SubjectAddFragment : Fragment() {
             if (checkInput(name, dayId, dayName, form, to)) {
                 val subject = Subject(0, name, dayId, dayName, form, to)
                 viewModel.addSubject(subject)
-                Toast.makeText(requireContext(), "Dodano zajecia!", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Dodano zajecia!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.subjectsListFragment)
             } else {
                 Toast.makeText(requireContext(), "Wpisz poprawne dane!", Toast.LENGTH_LONG)
@@ -70,9 +70,10 @@ class SubjectAddFragment : Fragment() {
         name: String,
         dayId: Int,
         dayName: String,
-        form: String,
+        from: String,
         to: String
     ): Boolean {
-        return name.isNotEmpty() && form.isNotEmpty() && to.isNotEmpty() && form.length == 5 && to.length == 5
+        return name.isNotEmpty() && from.isNotEmpty() && to.isNotEmpty() &&
+                (from.length == 5 || from.length == 2) && (to.length == 5 || to.length == 2)
     }
 }

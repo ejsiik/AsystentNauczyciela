@@ -11,7 +11,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Algebra"
+        android:text="Zajecia"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,15 +38,5 @@
         app:layout_constraintStart_toEndOf="@+id/subjectDayName"
 
         app:layout_constraintTop_toTopOf="@+id/subjectDayName" />
-
-    <Button
-        android:id="@+id/delete_subject_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Usuń"
-        app:layout_constraintBottom_toBottomOf="@+id/subjectFormTo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/subjectName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

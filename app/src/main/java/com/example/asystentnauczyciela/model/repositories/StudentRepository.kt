@@ -17,8 +17,4 @@ class StudentRepository(private val studentDao: StudentDao) {
     fun getEnrolledStudentsList(studentId: Number): LiveData<List<Student>> {
         return studentDao.getEnrolledStudents(studentId.toString())
     }
-
-    fun deleteStudentById(studentId: Number) {
-        return studentDao.deleteById(studentId.toString())
-    }
 }

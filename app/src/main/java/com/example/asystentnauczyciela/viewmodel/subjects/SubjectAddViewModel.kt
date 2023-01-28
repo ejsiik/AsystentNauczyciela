@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.asystentnauczyciela.model.database.TeacherAssistantDatabase
+import com.example.asystentnauczyciela.model.database.AsystentNauczycielaDatabase
 import com.example.asystentnauczyciela.model.entities.Subject
 import com.example.asystentnauczyciela.model.repositories.SubjectRepository
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ class SubjectAddViewModel(application: Application) : AndroidViewModel(applicati
     private val subjectRepository: SubjectRepository
 
     init {
-        val subjectDao = TeacherAssistantDatabase.getDatabase(application).subjectDao()
+        val subjectDao = AsystentNauczycielaDatabase.getDatabase(application).subjectDao()
         subjectRepository = SubjectRepository(subjectDao)
         getAllSubjects = subjectRepository.getAllSubjects
     }

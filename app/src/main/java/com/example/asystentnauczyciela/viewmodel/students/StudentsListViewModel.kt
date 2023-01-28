@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.asystentnauczyciela.model.database.TeacherAssistantDatabase
+import com.example.asystentnauczyciela.model.database.AsystentNauczycielaDatabase
 import com.example.asystentnauczyciela.model.entities.Student
 import com.example.asystentnauczyciela.model.repositories.StudentRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,17 +14,11 @@ class StudentsListViewModel(application: Application) : AndroidViewModel(applica
     private val studentRepository: StudentRepository
 
     init {
-        val studentDao = TeacherAssistantDatabase.getDatabase(application).studentDao()
+        val studentDao = AsystentNauczycielaDatabase.getDatabase(application).studentDao()
         studentRepository = StudentRepository(studentDao)
     }
 
     fun getAllStudents(): LiveData<List<Student>> {
         return studentRepository.getAllStudents
-    }
-
-    fun deleteStudentById(studentId: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            studentRepository.deleteStudentById(studentId)
-        }
     }
 }

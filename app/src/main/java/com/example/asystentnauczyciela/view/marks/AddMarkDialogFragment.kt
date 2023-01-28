@@ -29,6 +29,7 @@ class AddMarkDialogFragment(
             if (checkInput(mark, item)) {
                 val mark = Mark(0, args.studentId, args.subjectId, mark, item)
                 viewModel.addMark(mark)
+                Toast.makeText(requireContext(), "Dodano ocenę!", Toast.LENGTH_SHORT).show()
                 dialog?.cancel()
             } else {
                 Toast.makeText(requireContext(), "Wpisz poprawne dane!", Toast.LENGTH_LONG)
