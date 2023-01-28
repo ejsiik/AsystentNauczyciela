@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/subjectsListFragment"
+        android:title="@string/classes"
+        android:icon="@drawable/ic_baseline_space_dashboard_24"/>
+    <item
+        android:id="@+id/students"
+        android:title="@string/students"
+        android:icon="@drawable/ic_baseline_supervisor_account_24"/>
+</menu>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Asystent nauczyciela</string>
+    <string name="classes">Zajęcia</string>
+    <string name="students">Uczniowe</string>
+    <string name="add">Dodaj</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addStudent">Dodaj ucznia</string>
+    <string name="subjects">Zajecia</string>
+    <string name="addSubject">Dodaj zajecia</string>
+</resources>
