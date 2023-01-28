@@ -8,19 +8,19 @@ import com.example.asystentnauczyciela.model.database.AsystentNauczycielaDatabas
 import com.example.asystentnauczyciela.model.entities.Student
 import com.example.asystentnauczyciela.model.entities.StudentZajecia
 import com.example.asystentnauczyciela.model.repositories.StudentRepository
-import com.example.asystentnauczyciela.model.repositories.StudentSubjectCrossRepository
+import com.example.asystentnauczyciela.model.repositories.StudentZajeciaRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class AssignStudentToSubjectViewModel(application: Application) : AndroidViewModel(application) {
     private val studentRepository: StudentRepository
-    private val studentSubjectCrossRepository: StudentSubjectCrossRepository
+    private val studentZajeciaRepository: StudentZajeciaRepository
 
     init {
         val database = AsystentNauczycielaDatabase.getDatabase(application)
         studentRepository = StudentRepository(database.studentDao())
-        studentSubjectCrossRepository =
-            StudentSubjectCrossRepository(database.studentSubjectCrossDao())
+        studentZajeciaRepository =
+            StudentZajeciaRepository(database.studentSubjectCrossDao())
     }
 
     fun getUnEnrolledStudentsList(subjectId: Number): LiveData<List<Student>> {
@@ -29,7 +29,7 @@ class AssignStudentToSubjectViewModel(application: Application) : AndroidViewMod
 
     fun addEnrollment(studentZajecia: StudentZajecia) {
         viewModelScope.launch(Dispatchers.IO) {
-            studentSubjectCrossRepository.addStuStudentSubjectCross(studentZajecia)
+            studentZajeciaRepository.addStuStudentSubjectCross(studentZajecia)
         }
     }
 }

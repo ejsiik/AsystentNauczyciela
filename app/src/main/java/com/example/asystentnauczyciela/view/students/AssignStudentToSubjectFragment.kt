@@ -12,10 +12,10 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.model.entities.StudentZajecia
-import com.example.asystentnauczyciela.view.adapters.AssignStudentToSubjectAdapter
+import com.example.asystentnauczyciela.view.adapters.StudentToZajeciaAdapter
 import com.example.asystentnauczyciela.view.adapters.RecyclerViewInterface
 import com.example.asystentnauczyciela.viewmodel.students.AssignStudentToSubjectViewModel
-import kotlinx.android.synthetic.main.fragment_assign_student_to_subject.view.*
+import kotlinx.android.synthetic.main.fragment_student_to_zajecia.view.*
 
 class AssignStudentToSubjectFragment : Fragment(), RecyclerViewInterface {
 
@@ -31,10 +31,10 @@ class AssignStudentToSubjectFragment : Fragment(), RecyclerViewInterface {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_assign_student_to_subject, container, false)
+        val view = inflater.inflate(R.layout.fragment_student_to_zajecia, container, false)
 
         val recyclerView = view.assign_student_to_subject_recyclerview
-        val adapter = AssignStudentToSubjectAdapter(this, true)
+        val adapter = StudentToZajeciaAdapter(this, true)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 

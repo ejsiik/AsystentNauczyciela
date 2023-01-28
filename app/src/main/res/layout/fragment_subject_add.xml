@@ -26,6 +26,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Od"
+        android:inputType="time"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/subjectFormName"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />

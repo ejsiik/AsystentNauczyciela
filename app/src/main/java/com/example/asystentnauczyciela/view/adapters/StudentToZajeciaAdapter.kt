@@ -8,11 +8,11 @@ import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.model.entities.Student
 import kotlinx.android.synthetic.main.student_item.view.*
 
-class AssignStudentToSubjectAdapter(
+class StudentToZajeciaAdapter(
     private val recyclerViewInterface: RecyclerViewInterface?,
     private val hideDeleteButton: Boolean = false
 ) :
-    RecyclerView.Adapter<AssignStudentToSubjectAdapter.StudentsListHolder>() {
+    RecyclerView.Adapter<StudentToZajeciaAdapter.StudentsListHolder>() {
 
     private var studentList = emptyList<Student>()
 

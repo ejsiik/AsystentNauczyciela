@@ -67,7 +67,7 @@
         android:id="@+id/assignStudentToSubjectFragment"
         android:name="com.example.asystentnauczyciela.view.students.AssignStudentToSubjectFragment"
         android:label="Przypisz do: {subjectName}"
-        tools:layout="@layout/fragment_assign_student_to_subject">
+        tools:layout="@layout/fragment_student_to_zajecia">
         <action
             android:id="@+id/action_assignStudentToSubjectFragment_to_subjectFragment"
             app:destination="@id/subjectFragment" />
